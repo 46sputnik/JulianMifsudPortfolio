@@ -1,0 +1,340 @@
+/**************************************************************** CSS RESET ****************************************************************/
+* {/* ALL ELEMENTS */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+/**************************************************************** GENERIC ELEMENTS ****************************************************************/
+body {
+    background-color: #fafafa;
+    font-family: 'Copperplate', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+hr {
+    border: none;
+    /* Values: Width/Size Style Color */
+    border-bottom: 1px solid #ccc;
+
+    /* !important will not get replaced */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/**************************************************************** INTRO ****************************************************************/
+.intro {
+    background-image: url(Backgroundnew\ copy.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    width: 100vw; /* viewport/window width */
+    height: 100vh; /*viewport/window heigh*/
+
+    display: flex;
+
+    z-index: 1100;
+    /* puts the into in front of the navbar*/
+}
+
+.intro-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    /* Properties: X Y Size Colour */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    width: 25%;
+    padding: 20px;
+    margin: auto;
+
+    text-align: center;
+}
+
+.intro h1 {
+    text-transform: uppercase;
+    font-weight: normal;
+
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    line-height: 2;
+}
+
+/**************************************************************** CARD ****************************************************************/
+.card {
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+.card-image {
+    height: 500px;
+    overflow: hidden; /* Crops the extra content */
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+
+.card h2 {
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    font-size: 1.2em; /* 120% of the Font Size */
+}
+
+.card:hover img {
+    transform: scale(1.2);
+    transition-duration: 10s;
+    transition-timing-function: linear;
+}
+
+/**************************************************************** Website Conrainer ****************************************************************/
+.container{
+    max-width: 1280px;
+    /* pushes all content to the middle */
+    margin: auto;
+}
+
+.content-narrow {
+    max-width: 640px;
+    margin: auto;
+}
+
+/**************************************************************** Grid System ****************************************************************/
+.row {
+    display: flex;
+    /* If the content doesn't fit the line, move it to the next line */
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+/* Targets class="card" inside class="row" */
+.one-column .card {
+    width: 100%;
+}
+.two-columns .card {
+    width: calc((100% - 50px) / 2);
+}
+
+.three-columns .card {
+    width: calc((100% - 100px) / 3);
+}
+
+/**************************************************************** MAIN CONTENT ****************************************************************/
+.main-content {
+    margin-top: 100px;
+}
+
+.vertical-title {
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    transform-origin: 0 0;
+    transform: rotate(90deg) translateY(5px);
+
+    position: absolute;
+}
+
+/**************************************************************** FOOTER ****************************************************************************/
+.website-footer {
+    background-color: #4a3223;
+    padding: 50px;
+    color: #ffffff;
+}
+
+.website-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.website-footer .summary {
+    width: 33%;
+}   
+
+.website-footer .footer-links {
+    list-style: none;
+
+    columns: 2;
+    gap: 50px;
+
+    margin-left: auto;
+}
+
+.website-footer .footer-item {
+    margin-bottom: 10px;
+}
+
+.website-footer .footer-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.website-footer .copyright {
+    width: 100%;
+    text-align: 50px;
+}
+
+/**************************************************************** NAVIGATION ****************************************************************/
+.navbar {
+   
+    background-color: #4a3223;    
+
+    border-color: #4a3223;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 1px;
+    z-index: 1000;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+}
+.nav-link {
+    /* Padding On Top/Bottom, Left/Right */
+    padding: 30px 20px;
+}
+
+.navbar-brand {
+    font-family: 'Pirata One', Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em; /* 150% of the font size */
+    font-weight: bold;
+    align-content: center;
+}
+
+.intro-story {
+    z-index: 900;
+}
+
+/**************************************************************** STORY ****************************************************************/
+.story-header h1 {
+    /* Twice The Current Font Size */
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+.story-header p {
+    font-size: 1.5em;
+    font-style: italic;
+    font-family: Cardo, Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.2;
+}
+
+.story-header .byline {
+    margin-top: 10px;
+}
+
+/* Targets Everything Inside Class="byline" */
+.story-header .byline * {
+    display: inline;
+    font-style: normal;
+}
+
+/* A comma can be used to add CSS to multiple elements */
+.story-content p, .story-content .row {
+    margin-bottom: 50px;
+}
+
+.story-footer {
+    background-color: #415e5c;
+    /* padding: top/bottom left/right */
+    padding: 100px 50px;
+    margin: 50px auto;
+}
+
+.story-footer p {
+    color: white;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+}
+
+.social-link {
+    background-color: #415e5c;
+    display: block;
+    margin: 10px;
+    padding: 10px;
+
+    transition-property: fill;
+    transition-duration: 0.15s;
+}
+.social-link svg {
+    display: block;
+
+    font-size: 30px;
+
+    width: 1em;
+    height: 1em;
+}
+
+.social-link:hover {
+    background-color: #415e5c;
+}
+
+.social-link:hover svg {
+    fill: #ffffff;
+}
+
+/******************************** CONTACT FORM ********************************/
+
+form {
+    margin-bottom: 100px;
+    margin-top: 10px;
+}
+
+.form-element {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.form-element label {
+    width: 200px;
+}
+
+.form-element input,
+.form-element select,
+.form-element textarea,
+.form-element button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    display: block;
+    flex: 1;
+
+    padding: 5px;
+}
+
+.form-element button{
+    flex: 0;
+    width: 100px;
+    margin-right: 10px;
+}
